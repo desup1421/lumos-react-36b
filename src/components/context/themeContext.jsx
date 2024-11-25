@@ -1,0 +1,16 @@
+/* eslint-disable react-refresh/only-export-components */
+import React, { useContext, createContext } from 'react';
+
+const ThemeContext = createContext();
+
+export function ThemeProvider({children, value}) {
+    return (
+        <ThemeContext.Provider value={value}>
+            {children}
+        </ThemeContext.Provider>
+    )
+}
+
+export function useTheme() {
+    return useContext(ThemeContext);
+}
